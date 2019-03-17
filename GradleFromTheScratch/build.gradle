@@ -6,9 +6,16 @@ task ('hello').doLast{
 
 //Groovy is 99% compatible with java so we can easily write java code here
 //Only difference is, no semi colon is required
-import java.text.*
+/*import java.text.*
 
 SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss")
 sdf.setTimeZone(TimeZone.getTimeZone("CST"))
 
-println "Hello World at "+sdf.format(new Date())
+println "Hello World at "+sdf.format(new Date())*/
+
+printMyName("Kingshuk")
+
+void printMyName(s) {
+	println (s)
+}
+
