@@ -19,3 +19,165 @@ void printMyName(s) {
 	println (s)
 }
 
+println 'Age after doubling is '+doubleIt(32)
+
+//This is how we define a method that returns something
+int doubleIt(Integer age) {
+	print 'Age before doubling is '+age+'\n'
+	def y = age*2
+}
+
+//This is a similar method as above and without types
+def trippleIt(def age) {
+	print 'Age before doubling is '+age+'\n'
+	def y = age*3
+}
+
+def s1 = "My name is Kingshuk"
+def s2 = 'My name is Kingshuk'
+
+println s1
+
+println s2
+
+def s3 = """
+My name is Kingshuk
+And I'm from Kolkata
+"""
+
+println s3
+
+
+
+//String interpolation
+int num = 4
+def str1 = "Value of num is $num"
+
+println str1
+
+
+//Code interpolation
+def myCourse = 'gradle'
+
+println """Currently I'm learning about 
+${myCourse.toUpperCase()}"""
+
+
+//Properties
+class Person{
+	String name
+	int age
+	
+	Person(name, age) {
+		this.name = name
+		this.age = age
+	}
+}
+
+//Now let's define an object
+//Person person = new Person("Kingshuk",32)
+def person = new Person("Kingshuk",32)
+
+//Using the getter
+println "\n\n"+person.name + " is "+ person.age +" years old"
+
+//Using the setters
+person.name = "Deeksha"
+person.age = 29
+
+println person.name + " is "+ person.age +" years old"
+
+
+//Collections using properties
+Map m = new HashMap()
+
+//In java we would do
+//m.put("key1","value1")
+//m.put("key2","value2")
+//m.put("key3","value3")
+
+//In groovy we use the dot notation to acess
+//values using keys
+
+//We replace put method by property assignment
+m.key1 = "value1"
+m.key2 = "value2"
+m.key3 = "value3"
+
+println "\n**********Using collection with properties*************\n"
+println m.key1 +","+m.key2+","+m.key3+"\n\n"
+
+
+//Closures
+
+//Defining a closure and assigning it to a variable
+def echoIt = {
+	println "Hello from the closure side\n"
+}
+
+//Calling a closure, just like java method call
+echoIt()
+
+println echoIt
+
+def echoIt2 = {name -> 
+	println "\nHello from the closure side - "+name
+}
+
+echoIt2("Kingshuk")
+
+
+//Using 'it'
+def echoIt3 = {
+	println "\nHello from the closure side - "+it
+}
+
+echoIt3("Kingshuk")
+
+
+//Using 'it'
+Closure echoIt4 = {a, b, c ->
+	println a+" and "+b+" are "+c
+	a + b
+}
+
+println "\n"
+echoIt4("Kingshuk ", "Deeksha", "a couple")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
